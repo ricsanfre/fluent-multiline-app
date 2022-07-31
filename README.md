@@ -22,4 +22,12 @@ $ docker build -t ricsanfre/fluent-multiline-app:latest .
 
 ## Docker images available in docker hub
 
-Git actions configured to build automatically multiarchitecture AMD64 and ARM64 images. Docker hub images available at ricsanfre/fluent-multiline-app(https://hub.docker.com/r/ricsanfre/fluent-multiline-app)
+Git actions configured to build automatically multiarchitecture AMD64 and ARM64 images. Docker hub images available at [ricsanfre/fluent-multiline-app](https://hub.docker.com/r/ricsanfre/fluent-multiline-app)
+
+## Deploying the app in kubernetes
+
+To deploy the application in Kubernetes execute the following
+
+```bash
+$ kubectl apply -f kubernetes/fluent-multiline-app-deployment.yaml
+```
