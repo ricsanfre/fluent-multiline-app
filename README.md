@@ -1,11 +1,11 @@
-# Fluent multiline logging with Java (EFK stack) 
+# Multiline logging with Java for testing Fluentbit
 
 ## The purpose
 
 The goal of this project is to create a application to test Fluentbit/Fluentd multiline logs in a Kubernetes environment in my [Kubernetes Pi Cluster](http://picluster.ricsanfre.com)
 
 This is Java sample application, Spring Boot based application, that produces
-multiline logs and exception stacktraces. Demo app is mainly based on the one provided by [galovics](https://github.com/galovics/fluentd-multiline-java) updated for my home lab (picluster).
+multiline logs and exception stacktraces. Demo app is an adpatation of the [Scheduling task Spring example app](https://spring.io/guides/gs/scheduling-tasks/) for scheduling multiline log messages and exception.
 
 ## Docker multistage building image
 
