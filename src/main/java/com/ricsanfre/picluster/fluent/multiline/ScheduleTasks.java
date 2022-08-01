@@ -1,4 +1,4 @@
-package com.example.schedulingtasks;
+package com.ricsanfre.picluster.fluent.multiline;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
