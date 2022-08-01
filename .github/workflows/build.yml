@@ -30,19 +30,19 @@ jobs:
       - name: Build go app multiarch and push image.
         uses: docker/build-push-action@v2
         with:
-          context: ./go/.
-          file: Dockerfile
+          context: go
+          file: go/Dockerfile
           platforms: linux/amd64, linux/arm64
           push: true
-          tags: ${{ github.repository }}:java
+          tags: ${{ github.repository }}:go
           target: multi-line-app
       
       - name: Build java app multiarch and push image.
         uses: docker/build-push-action@v2
         with:
-          context: ./java/.
-          file: Dockerfile
+          context: java
+          file: java/Dockerfile
           platforms: linux/amd64, linux/arm64
           push: true
-          tags: ${{ github.repository }}:go
+          tags: ${{ github.repository }}:java
           target: multi-line-app
