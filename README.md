@@ -1,4 +1,4 @@
-# Multiline logging with Java for testing Fluentbit
+# Multiline logging apps for testing Fluentbit
 
 ## The purpose
 

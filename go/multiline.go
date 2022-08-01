@@ -29,7 +29,7 @@ func generate() {
 }
 
 func generateSimpleLogLine() {
-	fmt.Printf("%v # Generating single line log.", time.Now())
+	fmt.Printf("%v # Generating single line log.\n", time.Now())
 }
 
 func generateJsonLogLine() {
