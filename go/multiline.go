@@ -44,7 +44,7 @@ func generateMultilineLogLine() {
 
 func generateErrorStack() {
 	path := "/path/to/file/to/delete"
-	defer handleRemoveError()
+	// defer handleRemoveError()
     err := os.Remove(path)
 	if err != nil {
         panic(err)
