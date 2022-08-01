@@ -35,7 +35,6 @@ jobs:
           platforms: linux/amd64, linux/arm64
           push: true
           tags: ${{ github.repository }}:go
-          target: multi-line-app
       
       - name: Build java app multiarch and push image.
         uses: docker/build-push-action@v2
