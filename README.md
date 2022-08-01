@@ -2,27 +2,23 @@
 
 ## The purpose
 
-The goal of this project is to create a application to test Fluentbit/Fluentd multiline logs in a Kubernetes environment in my [Kubernetes Pi Cluster](http://picluster.ricsanfre.com)
+The goal of this project is to create applications to test Fluentbit/Fluentd multiline logs in a Kubernetes environment in my [Kubernetes Pi Cluster](http://picluster.ricsanfre.com).
 
-This is Java sample application, Spring Boot based application, that produces
-multiline logs and exception stacktraces. Demo app is an adpatation of the [Scheduling task Spring example app](https://spring.io/guides/gs/scheduling-tasks/) for scheduling multiline log messages and exception.
+Since built-in fluentbit multiline parsing supports several programming languages, two applications have been developed:
 
-## Docker multistage building image
+- Go application (`go` directory)
+  Generating, json log, text log and multiline logs includign strack traces. 
 
-Dockerfile provides a multi-stage building image where in the first stage, maven project is compiled. 
+- Java application (`java` directory)
+  Spring Boot based application, that produces multiline logs and exception stacktraces. Demo app is an adaptation of the [Scheduling task Spring example app](https://spring.io/guides/gs/scheduling-tasks/) for scheduling multiline log messages and exception.
 
-Base Maven project have been created with [Spring Initializator](https://start.spring.io/) without specifying any dependency.
-
-## Building the docker image
-
-Build the docker image and the application
-```bash
-$ docker build -t ricsanfre/fluent-multiline-app:latest .
-```
 
 ## Docker images available in docker hub
 
-Git actions configured to build automatically multiarchitecture AMD64 and ARM64 images. Docker hub images available at [ricsanfre/fluent-multiline-app](https://hub.docker.com/r/ricsanfre/fluent-multiline-app)
+
+Github actions configured to build automatically multiarchitecture AMD64 and ARM64 images with two different tags (`java` and `go`) for each of the application
+
+Docker hub images available at [ricsanfre/fluent-multiline-app](https://hub.docker.com/r/ricsanfre/fluent-multiline-app)
 
 ## Deploying the app in kubernetes
 

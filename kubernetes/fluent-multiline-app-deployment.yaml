@@ -22,6 +22,9 @@ spec:
         app: fluent-multiline-app
     spec:
       containers:
-        - name: fluent-multiline-app
-          image: ricsanfre/fluent-multiline-app:latest
+        - name: fluent-multiline-go
+          image: ricsanfre/fluent-multiline-app:go
+          imagePullPolicy: IfNotPresent
+        - name: fluent-multiline-java
+          image: ricsanfre/fluent-multiline-app:java
           imagePullPolicy: IfNotPresent

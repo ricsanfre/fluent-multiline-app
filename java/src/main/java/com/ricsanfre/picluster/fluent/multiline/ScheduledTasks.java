@@ -17,7 +17,7 @@ public class ScheduledTasks {
 
 	@Scheduled(fixedRate = 5000)
 	public void logMultiline() {
-		log.info("This is a multiline log: \nLine 2\nLine3\nLine4");
+		log.info("This is a multiline log: \nLine2\nLine3\nLine4");
 	}
 
 	@Scheduled(fixedRate = 10000)

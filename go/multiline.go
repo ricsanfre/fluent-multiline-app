@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 	"os"
+	"runtime/debug"
 )
 
 type JsonLog struct {
@@ -28,24 +29,32 @@ func generate() {
 }
 
 func generateSimpleLogLine() {
-	fmt.Printf("[DockerLogGenerator] Current Time: %v\n", time.Now())
+	fmt.Printf("%v # Generating single line log.", time.Now())
 }
 
 func generateJsonLogLine() {
-	jsonMap := map[string]string{"timeStamp": fmt.Sprintf("%v", time.Now()), "logMessage": "[DockerLogGenerator] This is a JSON log entry"}
+	jsonMap := map[string]string{"timeStamp": fmt.Sprintf("%v", time.Now()), "logMessage": "This is a JSON log"}
 	json, _ := json.Marshal(jsonMap)
 	fmt.Println(string(json))
 }
 
 func generateMultilineLogLine() {
-	fmt.Printf("[DockerLogGenerator] Multiline: %v\n This is the second line\nThis is the third line\n", time.Now())
+	fmt.Printf("%v # Generating multiline log:\nLine2\nLine3\n", time.Now())
 }
 
 func generateErrorStack() {
 	path := "/path/to/file/to/delete"
+	defer handleRemoveError()
     err := os.Remove(path)
 	if err != nil {
-        fmt.Println(err)
+        panic(err)
     }
 
+}
+
+func handleRemoveError() {
+    if r := recover(); r != nil {
+        fmt.Println(time.Now(), "# Error removing a file:", r)
+        debug.PrintStack()
+    }
 }
