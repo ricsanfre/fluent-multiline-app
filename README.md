@@ -7,11 +7,7 @@ The goal of this project is to create applications to test Fluentbit/Fluentd mul
 Since built-in fluentbit multiline parsing supports several programming languages, two applications have been developed:
 
 - Go application (`go` directory)
-  Generating, json log, text log and multiline logs includign strack traces. 
-
 - Java application (`java` directory)
-  Spring Boot based application, that produces multiline logs and exception stacktraces. Demo app is an adaptation of the [Scheduling task Spring example app](https://spring.io/guides/gs/scheduling-tasks/) for scheduling multiline log messages and exception.
-
 
 ## Docker images available in docker hub
 

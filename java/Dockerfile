@@ -13,7 +13,7 @@ FROM openjdk:8-jre-alpine3.9  as multi-line-app
 
 # copy only the artifacts we need from the first stage and discard the rest 
 
-COPY --from=maven_build /target/multiline-0.0.1-SNAPSHOT.jar /multiline.jar 
+COPY --from=maven_build /target/multiline-0.0.1-SNAPSHOT-jar-with-dependencies.jar /multiline.jar 
 
 # set the startup command to execute the jar 
 CMD ["java", "-jar", "/multiline.jar"]

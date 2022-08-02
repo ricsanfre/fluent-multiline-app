@@ -8,7 +8,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fluent-multiline-app
-  namespace: fluent-test
+  namespace: fluent-tests
   labels:
     app: fluent-multiline-app
 spec:
